@@ -46,7 +46,15 @@ const config = {
         use: "file-loader",
       },
       {
-        test: /\.(css|scss)$/i,
+        test: /\.scss$/i,
+        use: [
+          "style-loader",
+          "css-loader",
+          "sass-loader",
+        ],
+      },
+      {
+        test: /\.css$/i,
         exclude: /node_modules/,
         use: [
           "style-loader",
