@@ -1,6 +1,7 @@
 import React, { memo, FC } from 'react'
 import styled from 'styled-components'
 import { useHistory } from 'react-router-dom'
+import classNames from 'classnames'
 import { media, SCROLLBARS_MIN_LIGHT } from '../../styles'
 import searchSvg from '../../assets/svg/search.svg'
 import { Field, Dropdown, CN_DROPDOWN_HEADER } from '../../components/form'
@@ -9,24 +10,25 @@ import Button from '../../components/Button'
 import { updateUrl } from './shared/helpers'
 import { STYLE_HEADER_HEIGHT, STYLE_HEADER_HEIGHT_SM, STYLE_HEADER_ITEMS_VERTICAL_PADDING } from './shared/styles'
 import { UrlParams } from '../../shared'
+import styles from './PageHeader.module.scss';
 
 const CN_PAGE_HEADER = 'page-header'
 
-const Header = styled.header`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  padding-top: var(--size-lg);
-  height: ${STYLE_HEADER_HEIGHT};
-  overflow: auto;
-  ${SCROLLBARS_MIN_LIGHT};
+// const Header = styled.header`
+//   position: relative;
+//   display: flex;
+//   flex-direction: column;
+//   padding-top: var(--size-lg);
+//   height: ${STYLE_HEADER_HEIGHT};
+//   overflow: auto;
+//   ${SCROLLBARS_MIN_LIGHT};
 
-  ${media.md} {
-    padding: var(--size-sm) var(--size-lg) 0;
-    height: ${STYLE_HEADER_HEIGHT_SM};
-    flex-direction: row;
-  };
-`
+//   ${media.md} {
+//     padding: var(--size-sm) var(--size-lg) 0;
+//     height: ${STYLE_HEADER_HEIGHT_SM};
+//     flex-direction: row;
+//   };
+// `
 const Title = styled.h1`
   padding-left: 16px;
   font-weight: bold;
@@ -86,7 +88,7 @@ const PageHeader: FC<IProps> = ({ urlParams, positions, statuses }) => {
   }
 
   return (
-    <Header className={CN_PAGE_HEADER}>
+    <header className={classNames(styles.header, CN_PAGE_HEADER)}>
       <Title>Candidates</Title>
       <Filters>
         <DropdownStyled
@@ -112,7 +114,7 @@ const PageHeader: FC<IProps> = ({ urlParams, positions, statuses }) => {
         />
         <Button onClick={onClearFilters}>Clear fiters</Button>
       </Filters>
-    </Header>
+    </header>
   )
 }
 
