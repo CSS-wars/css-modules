@@ -3,56 +3,28 @@ import styled from 'styled-components'
 import logo from '../assets/logo.png'
 import { Themes } from '../shared/enums'
 import { Dropdown, CN_DROPDOWN_CHEVRON } from '../components/form'
-
-const Wrap = styled.div`
-  display: flex;
-  height: var(--STYLE_HEADER_HEIGHT);
-  align-items: center;
-  padding: var(--size-lg);
-  background-color: var(--white);
-  box-shadow: var(--BOX_SHADOW_LIGHT);
-`
-const LogoLink = styled.a`
-  &:hover {
-    fill: var(--medium-sky-blue);
-  };
-`
-const Logo = styled.img`
-  height: var(--STYLE_HEADER_HEIGHT);
-`
-const DropdownStyled = styled(Dropdown)`
-  margin-left: auto;
-
-  .${CN_DROPDOWN_CHEVRON} {
-    margin-left: var(--size-md);
-  };
-`
-const Github = styled.a`
-  margin-left: var(--size-md);
-  padding: var(--size-sm) var(--size-md);
-  background-color: var(--white-smoke);
-  border-radius: 2px;
-`
+import styles from './Header.module.scss'
 
 interface Props {
   activeTheme: string;
   setActiveTheme(selectedTheme: string): void;
 }
 const Header: FC<Props> = ({ activeTheme, setActiveTheme }) => (
-  <Wrap>
-    <LogoLink href="" target="_blank" rel="noopener noreferrer">
-      <Logo src={logo} />
-    </LogoLink>
-    <DropdownStyled
+  <div className={styles.wrap}>
+    <a className={styles.logoLink} href="" target="_blank" rel="noopener noreferrer">
+      <img className={styles.logo} src={logo} />
+    </a>
+    <Dropdown
+      className={styles.dropdownStyled}
       list={Object.values(Themes)}
       activeItem={activeTheme}
       placeholder="Theme"
       onItemSelect={selectedTheme => setActiveTheme(selectedTheme)}
     />
-    <Github href="https://github.com/vincentbollaert/react-boilerplate-simple" target="_blank" rel="noopener noreferrer">
+    <a className={styles.github} href="https://github.com/vincentbollaert/react-boilerplate-simple" target="_blank" rel="noopener noreferrer">
       GitHub
-    </Github>
-  </Wrap>
+    </a>
+  </div>
 )
 
 export default memo(Header)

@@ -1,0 +1,29 @@
+.wrap {
+  display: flex;
+  height: var(--STYLE_HEADER_HEIGHT);
+  align-items: center;
+  padding: var(--size-lg);
+  background-color: var(--white);
+  box-shadow: var(--BOX_SHADOW_LIGHT);
+}
+.logoLink {
+  &:hover {
+    fill: var(--medium-sky-blue);
+  };
+}
+.logo {
+  height: var(--STYLE_HEADER_HEIGHT);
+}
+.dropdownStyled {
+  margin-left: auto;
+
+  // .${CN_DROPDOWN_CHEVRON} {
+  //   margin-left: var(--size-md);
+  // };
+}
+.github {
+  margin-left: var(--size-md);
+  padding: var(--size-sm) var(--size-md);
+  background-color: var(--white-smoke);
+  border-radius: 2px;
+}
