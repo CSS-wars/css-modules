@@ -8,7 +8,7 @@ import { Field, Dropdown, CN_DROPDOWN_HEADER } from '../../components/form'
 import Button from '../../components/Button'
 
 import { updateUrl } from './shared/helpers'
-import { STYLE_HEADER_HEIGHT, STYLE_HEADER_HEIGHT_SM, STYLE_HEADER_ITEMS_VERTICAL_PADDING } from './shared/styles'
+// import './shared/styles.scss'
 import { UrlParams } from '../../shared'
 import styles from './PageHeader.module.scss';
 
@@ -19,13 +19,13 @@ const CN_PAGE_HEADER = 'page-header'
 //   display: flex;
 //   flex-direction: column;
 //   padding-top: var(--size-lg);
-//   height: ${STYLE_HEADER_HEIGHT};
+//   height: var(--STYLE_HEADER_HEIGHT);
 //   overflow: auto;
-//   ${SCROLLBARS_MIN_LIGHT};
+//   $SCROLLBARS_MIN_LIGHT;
 
 //   ${media.md} {
 //     padding: var(--size-sm) var(--size-lg) 0;
-//     height: ${STYLE_HEADER_HEIGHT_SM};
+//     height: var(--STYLE_HEADER_HEIGHT_SM);
 //     flex-direction: row;
 //   };
 // `
@@ -39,7 +39,7 @@ const Title = styled.h1`
     position: absolute;
     bottom: 0;
     padding: 0;
-    padding-bottom: ${STYLE_HEADER_ITEMS_VERTICAL_PADDING};
+    padding-bottom: var(--STYLE_HEADER_ITEMS_VERTICAL_PADDING);
   };
 `
 const Filters = styled.div`
@@ -56,7 +56,7 @@ const DropdownStyled = styled(Dropdown)`
   width: 16rem;
 
   .${CN_DROPDOWN_HEADER} {
-    padding-bottom: ${STYLE_HEADER_ITEMS_VERTICAL_PADDING};
+    padding-bottom: var(--STYLE_HEADER_ITEMS_VERTICAL_PADDING);
   };
 `
 const SearchField = styled(Field)`

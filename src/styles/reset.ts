@@ -1,7 +1,5 @@
 // https://gist.github.com/vincentbollaert/e90def9b351d8d97c90ef7cfd887685e
 
-import { UNIT_SIZE, FONT_SIZE } from './variables'
-
 export default `
   html {
     height: 100%;
@@ -11,18 +9,18 @@ export default `
     box-sizing: border-box;
     font-size: 62.5%;
     
-    --font-size-xxsm: ${FONT_SIZE.xxsm};
-    --font-size-xsm: ${FONT_SIZE.xsm};
-    --font-size-sm: ${FONT_SIZE.sm};
-    --font-size-md: ${FONT_SIZE.md};
-    --font-size-lg: ${FONT_SIZE.lg};
-    --font-size-xlg: ${FONT_SIZE.xlg};
+    --font-size-xxsm: 0.9rem;
+    --font-size-xsm: 1remm;
+    --font-size-sm: 1.1rem;
+    --font-size-md: 1.2rem;
+    --font-size-lg: 1.3rem;
+    --font-size-xlg: 1.6remm;
 
-    --size-xsm: ${UNIT_SIZE.xsm};
-    --size-sm: ${UNIT_SIZE.sm};
-    --size-md: ${UNIT_SIZE.md};
-    --size-lg: ${UNIT_SIZE.lg};
-    --size-xlg: ${UNIT_SIZE.xlg};
+    --size-xsm: 0.4rem;
+    --size-sm: 0.8rem;
+    --size-md: 1.2rem;
+    --size-lg: 1.6rem;
+    --size-xlg: 2.4rem;
 
     --capri: #3dc3ff;
     --sky-blue: #78E0FF;

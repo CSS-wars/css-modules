@@ -2,7 +2,6 @@ import React, { FC } from 'react'
 import styled from 'styled-components'
 import { media, SCROLLBARS_MIN_LIGHT } from '../../styles'
 
-import { STYLE_HEADER_HEIGHT, STYLE_HEADER_HEIGHT_SM } from './shared/styles'
 import { TABLE_HEADERS } from './shared/constants'
 import { SortDirections } from './shared/enums'
 import { Candidate } from './shared/types'
@@ -22,11 +21,11 @@ const STYLE_SORTED_COLUMN_COLOR = '#42606796'
 
 const TableWrap = styled.div`
   overflow: auto;
-  height: ${`calc(100% - ${STYLE_HEADER_HEIGHT})`};
+  height: calc(100% - var(--STYLE_HEADER_HEIGHT));
   ${SCROLLBARS_MIN_LIGHT};
 
   ${media.md} {
-    height: ${`calc(100% - ${STYLE_HEADER_HEIGHT_SM})`};
+    height: calc(100% - var(--STYLE_HEADER_HEIGHT_SM));
   };
 `
 const Table = styled.table``

@@ -5,11 +5,9 @@ import logo from '../assets/logo.png'
 import { Themes } from '../shared/enums'
 import { Dropdown, CN_DROPDOWN_CHEVRON } from '../components/form'
 
-import { STYLE_HEADER_HEIGHT } from './styles'
-
 const Wrap = styled.div`
   display: flex;
-  height: ${STYLE_HEADER_HEIGHT};
+  height: var(--STYLE_HEADER_HEIGHT);
   align-items: center;
   padding: var(--size-lg);
   background-color: var(--white);
@@ -21,7 +19,7 @@ const LogoLink = styled.a`
   };
 `
 const Logo = styled.img`
-  height: ${STYLE_HEADER_HEIGHT};
+  height: var(--STYLE_HEADER_HEIGHT);
 `
 const DropdownStyled = styled(Dropdown)`
   margin-left: auto;

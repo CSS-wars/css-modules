@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
 import styled, { createGlobalStyle } from 'styled-components'
 import { reset, media, BOX_SHADOW_LIGHT } from '../styles'
 
-import { STYLE_HEADER_HEIGHT } from './styles'
 import { Themes } from '../shared/enums'
 import Header from './Header'
 import Home from '../pages/Home/Home'
@@ -22,7 +21,7 @@ const PageWrap = styled.div`
 const PageSpacer = styled.div`
   margin: 0 auto;
   padding: var(--size-sm);
-  height: ${`calc(100% - ${STYLE_HEADER_HEIGHT})`};
+  height: calc(100% - var(--STYLE_HEADER_HEIGHT));
   max-width: 140rem;
 
   ${media.sm} {
