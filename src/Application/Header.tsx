@@ -1,6 +1,5 @@
 import React, { memo, FC } from 'react'
 import styled from 'styled-components'
-import { BOX_SHADOW_LIGHT } from '../styles'
 import logo from '../assets/logo.png'
 import { Themes } from '../shared/enums'
 import { Dropdown, CN_DROPDOWN_CHEVRON } from '../components/form'
@@ -11,7 +10,7 @@ const Wrap = styled.div`
   align-items: center;
   padding: var(--size-lg);
   background-color: var(--white);
-  box-shadow: ${BOX_SHADOW_LIGHT};
+  box-shadow: var(--BOX_SHADOW_LIGHT);
 `
 const LogoLink = styled.a`
   &:hover {

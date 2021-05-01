@@ -1,15 +1,14 @@
 import React, { FC, useState } from 'react'
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
 import styled, { createGlobalStyle } from 'styled-components'
-import { reset, media, BOX_SHADOW_LIGHT } from '../styles'
+import { media } from '../styles'
+import '../styles/reset.scss'
 
 import { Themes } from '../shared/enums'
 import Header from './Header'
 import Home from '../pages/Home/Home'
 
 const GlobalStyle = createGlobalStyle<{ activeTheme: string }>`
-  ${reset};
-
   html {
     font-size: ${({ activeTheme }) => activeTheme === Themes.normal
     ? '62.5%' : activeTheme === Themes.compact ? '50%' : '70%'};
@@ -37,7 +36,7 @@ const ContentWrap = styled.div`
   position: relative;
   height: 100%;
   background-color: var(--white);
-  box-shadow: ${BOX_SHADOW_LIGHT};
+  box-shadow: var(--BOX_SHADOW_LIGHT);
 `
 
 const Application: FC = () => {

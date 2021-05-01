@@ -4,14 +4,7 @@ import throttle from 'lodash/fp/throttle'
 import chevronDownSvg from '../../assets/svg/chevron-down.svg'
 import Svg from '../Svg'
 
-import {
-  STYLE_FIELD_UNDERLINE,
-  STYLE_FIELD_UNDERLINE_HAS_VALUE,
-  STYLE_DROPDOWN_BG,
-  SCROLLBARS_DROPDOWN,
-  STYLE_HAS_VALUE_PADDING,
-  STYLE_HEIGHT,
-} from './shared'
+// import { SCROLLBARS_DROPDOWN } from './shared'
 import Placeholder from './Placeholder';
 
 export const CN_DROPDOWN_HEADER = 'dropdown-header'
@@ -32,7 +25,7 @@ position: relative;
   outline: none;
   ${p => p.isOpen && `
     z-index: 3;
-    background-color: ${STYLE_DROPDOWN_BG}`
+    background-color: var(--STYLE_DROPDOWN_BG)`
   };
   ${p => p.isDisabled && 'pointer-events: none'};
 `
@@ -45,11 +38,11 @@ const HeaderInnerWrap = styled.div<{ isOpen: boolean; hasActiveItem: boolean }>`
   position: relative;
   display: flex;
   align-items: center;
-  height: ${STYLE_HEIGHT};
-  box-shadow: ${p => p.isOpen ? STYLE_BOX_SHADOW_IS_OPEN : STYLE_FIELD_UNDERLINE};
+  height: var(--STYLE_HEIGHT);
+  box-shadow: ${p => p.isOpen ? STYLE_BOX_SHADOW_IS_OPEN : 'var(--STYLE_FIELD_UNDERLINE)'};
 
   &:hover {
-    box-shadow: ${p => p.isOpen ? STYLE_BOX_SHADOW_IS_OPEN : STYLE_FIELD_UNDERLINE_HAS_VALUE};
+    box-shadow: ${p => p.isOpen ? STYLE_BOX_SHADOW_IS_OPEN : 'var(--STYLE_FIELD_UNDERLINE_HAS_VALUE)'};
 
     .${CN_DROPDOWN_CHEVRON} {
       fill: var(--sonic-silver);
@@ -57,7 +50,7 @@ const HeaderInnerWrap = styled.div<{ isOpen: boolean; hasActiveItem: boolean }>`
   };
 
   ${p => p.hasActiveItem && `
-    padding: ${STYLE_HAS_VALUE_PADDING};
+    padding: var(--STYLE_HAS_VALUE_PADDING)};
     color: var(--sonic-silver);
   `};
 `
@@ -95,9 +88,8 @@ const Menu = styled.ul<{ coordinates: Coordinates, isOpen: boolean }>`
   width: ${p => p.coordinates.width}px;
   max-height: 21.4rem;
   color: ${STYLE_COLOR};
-  background-color: ${STYLE_DROPDOWN_BG};
+  background-color: var(--STYLE_DROPDOWN_BG);
   overflow: auto;
-  ${SCROLLBARS_DROPDOWN};
 `
 
 const Item = styled.li<{ isActive: boolean }>`

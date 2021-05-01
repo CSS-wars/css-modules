@@ -3,12 +3,6 @@ import styled from 'styled-components'
 
 import Svg from '../Svg'
 import Placeholder from './Placeholder'
-import {
-  STYLE_FIELD_UNDERLINE,
-  STYLE_FIELD_UNDERLINE_HAS_VALUE,
-  STYLE_HAS_VALUE_PADDING,
-  STYLE_HEIGHT,
-} from './shared'
 
 export const CN_FIELD_SVG = 'field-svg'
 
@@ -18,13 +12,13 @@ const Wrap = styled.div`
 `
 const Input = styled.input<{ value: ReactText }>`
   width: 13rem;
-  height: ${STYLE_HEIGHT};
-  box-shadow: ${STYLE_FIELD_UNDERLINE};
+  height: var(--STYLE_HEIGHT);
+  box-shadow: var(--STYLE_FIELD_UNDERLINE);
   color: var(--sonic-silver);
-  ${p => p.value && `padding: ${STYLE_HAS_VALUE_PADDING}`};
+  ${p => p.value && 'padding: var(--STYLE_HAS_VALUE_PADDING)'};
 
   &:hover {
-    box-shadow: ${STYLE_FIELD_UNDERLINE_HAS_VALUE};
+    box-shadow: var(--STYLE_FIELD_UNDERLINE_HAS_VALUE);
 
     & ~ .${CN_FIELD_SVG} {
       fill: var(--sonic-silver);
